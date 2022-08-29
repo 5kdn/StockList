@@ -1,0 +1,42 @@
+#footer-separater {
+    margin-top: 16px;
+}
+#footer {
+    color: #808080;
+        background: #e5e5e5;
+        text-align: center;
+        padding: 30px;
+
+    & > a {
+        color: #808080;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    & .menu {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        & li {
+            margin: 0;
+            padding: 0 20px;
+            border-right: 1px #808080 solid;
+
+            &:last-child {
+                border: none;
+            }
+        }
+    }
+
+    & .copyright {
+        margin: 0;
+        padding: 20px 0 0 0;
+    }
+}

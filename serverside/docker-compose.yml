@@ -1,0 +1,19 @@
+version: '2.3'
+services:
+  app:
+    build: 'app'
+    container_name: 'StockList'
+    volumes:
+      - ./app/app/:/var/www/app
+      - ./tmp:/tmp/stocklist
+    logging:
+      driver: json-file
+      options:
+        max-file: '3'
+        max-size: 3m
+    environment:
+      - PORT=${PORT:?err}
+      - DEBUG=${DEBUG:?err}
+      - SERVICE_ACCOUNT_FILE=${SERVICE_ACCOUNT_FILE:?err}
+      - SHEET_URL=${SHEET_URL:?err}
+      - WORKSHEET_NAME=${WORKSHEET_NAME:?err}

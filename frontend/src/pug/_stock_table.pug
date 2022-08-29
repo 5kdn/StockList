@@ -1,0 +1,17 @@
+table.stocklist
+    tr
+        th id
+        th 名称
+        th 価格（円）
+        th 在庫数
+        th 備考
+    .
+        {% for key, val in stocks.items() %}
+        <tr>
+            <td>{{key}}</td>
+            <td>{{val.name}}</td>
+            <td>{{val.price}}</td>
+            <td>{{val.inventory}}</td>
+            <td>{{val.remarks}}</td>
+        </tr>
+        {% endfor %}

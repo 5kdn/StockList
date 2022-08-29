@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>在庫リスト</title>
+    <link rel="stylesheet" href="css/destyle.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>在庫リスト</h1>
+      <table class="stocklist">
+        <tr>
+          <th>id</th>
+          <th>名称</th>
+          <th>価格（円）</th>
+          <th>在庫数</th>
+          <th>備考</th>
+        </tr>{% for key, val in stocks.items() %}
+        <tr>
+            <td>{{key}}</td>
+            <td>{{val.name}}</td>
+            <td>{{val.price}}</td>
+            <td>{{val.inventory}}</td>
+            <td>{{val.remarks}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <hr id="footer-separater">
+    <div id="footer">
+      <ul class="menu">
+        <li><a href="#">AAAAA</a></li>
+        <li><a href="#">BBBBB</a></li>
+        <li><a href="#">CCCCC</a></li>
+        <li><a href="#">DDDDD</a></li>
+        <li><a href="#">EEEEE</a></li>
+      </ul>
+      <p class="copyright">&copy; My Site</p>
+    </div>
+  </body>
+</html>

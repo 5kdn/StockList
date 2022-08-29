@@ -1,0 +1,23 @@
+[Unit]
+Description = kokomatu Stock List Docker
+Requires    = docker.service
+Wants       = nginx.service
+After       = nginx.service
+After       = docker.service
+
+[Service]
+Type        = simple
+User        = root
+Group       = root
+
+Environment = COMPOSE_FILE=/var/www/kokomatuStockList/serverside/docker-compose.yml
+
+ExecStartPre=-/usr/local/bin/docker-compose -f ${COMPOSE_FILE} down --volumes
+ExecStart   = /usr/local/bin/docker-compose -f ${COMPOSE_FILE} -p StockList up
+ExecStop    = /usr/local/bin/docker-compose -f ${COMPOSE_FILE} down --vokumes
+
+Restart     = always
+RestartSec  = 10
+
+[Install]
+WantedBy    = multi-user.target
